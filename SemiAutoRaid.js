@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW - Semi Auto Raid
 // @namespace    http://tampermonkey.net/
-// @version      1
+// @version      1.1
 // @description  Semi Automatic Nation Raider
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/nation/war/groundbattle/war=*
@@ -13,6 +13,16 @@
 
 
 if(window.location.href.startsWith("https://politicsandwar.com/nation/war/groundbattle/war")){
+    //try turning off munitions
+    try {
+        console.log('munitions button found');
+        document.querySelector('tbody tr.smallText.bold td.center label input').click()
+    }
+    catch(err) {
+        console.log('no munitions button found');
+    }
+
+    //do the rest
     let fightAgainButton = document.getElementsByClassName('btn btn-danger')[0]
 
     if(fightAgainButton == undefined){
