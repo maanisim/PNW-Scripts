@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         PNW - Baseball Host Auto
-// @namespace    https://politicsandwar.com/nation/id=19818
+// @namespace    https://github.com/michalani/PNW-Scripts
 // @version      1.7
-// @description  Automate Hosting Games Better
+// @description  Automate Baseball Hosting Games
 // @author       BlackAsLight
 // @author       Modified by https://github.com/michalani/
 // @match        https://politicsandwar.com/obl/host/
