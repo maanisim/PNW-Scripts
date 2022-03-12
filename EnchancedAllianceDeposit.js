@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        PNW - Enchanced Alliance Deposit Functionality
-// @version     1
+// @version     1.1
 // @description Expands the functionality of depositing by filling the cash deposit for you, or alternatively all resources for safekeeping.
 // @author      https://github.com/michalani/
 // @license     MIT
@@ -11,7 +11,7 @@
 // @noframes
 // ==/UserScript==
 
-//1. Set deposit message to "safekeep"
+//1. Set message to "safekeep"
 document.querySelector('body div.container div.row div#rightcolumn.col-md-10 div.row div.col-sm-6.col-xs-12 form table.nationtable tbody tr td.center p input').value = "safekeep"
 
 //var bankElements = document.querySelectorAll('body div.container div.row div#rightcolumn.col-md-10 div.row div.col-sm-6.col-xs-12 form table.nationtable tbody tr td')[1].firstChild
@@ -25,7 +25,7 @@ let minCashOnHand = 1500000
 
 function clickDepositButton(){
     //click normal deposit button.
-    //document.querySelector('form table.nationtable tbody tr td.center p input.big-submit').click();
+    document.querySelector('form table.nationtable tbody tr td.center p input.big-submit').click();
 }
 
 //deposit all
