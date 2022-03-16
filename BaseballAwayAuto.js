@@ -2,7 +2,7 @@
 // @name         PNW - Baseball Away Auto
 // @namespace    https://github.com/michalani/PNW-Scripts
 // @version      1.5
-// @description  Automate Baseball Away Games
+// @description  Automate Playing Away Games Better
 // @author       BlackAsLight
 // @author       Modified by https://github.com/michalani/
 // @match        https://politicsandwar.com/obl/play/
@@ -552,10 +552,17 @@ document.head.append((() => {
 /* Start
 -------------------------*/
 async function Main() {
-	NotifySection();
-	const divTag = SetUpButton();
-	divTag.parentElement.insertBefore(CreateTable(), divTag.nextElementSibling);
-	await CheckStats();
+    try{
+        NotifySection();
+        const divTag = SetUpButton();
+        divTag.parentElement.insertBefore(CreateTable(), divTag.nextElementSibling);
+        await CheckStats();
+    }catch(err){
+        if(document.querySelector('body div.container div.row div#rightcolumn.col-md-10 div.columnheader').textContent == "Server Under Heavy Load"){
+            await Sleep(5000);
+            location.reload();
+        }
+    }
 }
 
 Main();

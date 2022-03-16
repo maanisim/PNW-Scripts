@@ -38,7 +38,7 @@ function depositAll(){
         //console.log(bankElements[i]);
         bankElements[i].firstChild.value = parseInt(maxResourceValue);
     }
-    clickDepositButton();
+    //clickDepositButton();
 }
 
 

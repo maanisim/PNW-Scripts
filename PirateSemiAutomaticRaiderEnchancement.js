@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW - Pirate Semi-Automatic Raider Enchancement
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Speeds up raiding other players by automating certain actions, such as setting ground battles to raid mode and disabling the use of munitions if enemy has no troops.
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/nation/war/groundbattle/war=*
@@ -34,6 +34,22 @@ function loadWarPage(){
     window.location=warPage;
 }
 
+function reloadPage(){
+    window.location=window.location;
+}
+
+function isServerUnderLoad(){
+    try{
+        if(document.querySelector('body div.container div.row div#rightcolumn.col-md-10 div.columnheader').textContent == "Server Under Heavy Load"){
+            return true;
+        } else{
+            return false;
+        }
+    } catch(err){
+        return false;
+    }
+}
+
 
 
 /*
@@ -43,6 +59,10 @@ if there are check if the enemy has any army, if they don't dont waste your muni
 
 else attack them
 */
+
+if(isServerUnderLoad() == true){
+    setTimeout(reloadPage, 5100);
+}
 
 if(window.location.href.startsWith("https://politicsandwar.com/nation/war/groundbattle/war=")){
     //if "attack again" or "ground battle" everything is fine, otherwise we are redirected to /human page or server is under heavy load.
