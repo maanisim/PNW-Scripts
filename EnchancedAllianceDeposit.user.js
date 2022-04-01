@@ -7,9 +7,8 @@
 // @include     https://politicsandwar.com/alliance/id=8429&display=bank
 // @grant       none
 // @icon        https://www.google.com/s2/favicons?domain=politicsandwar.com
-// @updateURL   https://raw.githubusercontent.com/michalani/PNW-Scripts/master/EnchancedAllianceDeposit.js
-// @downloadURL https://raw.githubusercontent.com/michalani/PNW-Scripts/master/EnchancedAllianceDeposit.js
-
+// @updateURL   https://raw.githubusercontent.com/michalani/PNW-Scripts/master/EnchancedAllianceDeposit.user.js
+// @downloadURL https://raw.githubusercontent.com/michalani/PNW-Scripts/master/EnchancedAllianceDeposit.user.js
 // @noframes
 // ==/UserScript==
 

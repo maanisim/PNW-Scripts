@@ -6,8 +6,8 @@
 // @author       BlackAsLight
 // @match        https://politicsandwar.com/rewarded-ads/
 // @icon         https://avatars.githubusercontent.com/u/44320105
-// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AdWatcher.js
-// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AdWatcher.js
+// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AdWatcher.user.js
+// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AdWatcher.user.js
 // @grant        none
 // ==/UserScript==
 

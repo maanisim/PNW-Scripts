@@ -7,7 +7,8 @@
 // @match        https://politicsandwar.com/index.php?id=15&keyword=&cat=everything&ob=date&od=ASC&gopage=%3E%3E&maximum=50&minimum=*
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
-// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AutoComender.js
+// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AutoComender.user.js
+// @download URL https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AutoComender.user.js
 // @grant        none
 // ==/UserScript==
 

@@ -1,4 +1,4 @@
-// ==UserScript==
+n// ==UserScript==
 // @name         PNW - Pirate Semi-Automatic Raider Enchancement
 // @namespace    http://tampermonkey.net/
 // @version      1.3
@@ -8,8 +8,8 @@
 // @match        https://politicsandwar.com/nation/war/declare/id=*
 // @match        https://politicsandwar.com/nation/war
 // @match        https://politicsandwar.com/nation/war/
-// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.js
-// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.js
+// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.user.js
+// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.user.js
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
 // @grant        none
 // ==/UserScript==
