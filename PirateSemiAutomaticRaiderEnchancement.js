@@ -9,6 +9,7 @@
 // @match        https://politicsandwar.com/nation/war
 // @match        https://politicsandwar.com/nation/war/
 // @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.js
+// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.js
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
 // @grant        none
 // ==/UserScript==
