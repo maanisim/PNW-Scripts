@@ -7,8 +7,8 @@
 // @author       Modified by https://github.com/michalani/
 // @match        https://politicsandwar.com/obl/host/*
 // @match        https://politicsandwar.com/obl/play/*
-// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/BaseballHostAwayAuto.user.js
-// @downloadURL	 https://raw.githubusercontent.com/michalani/PNW-Scripts/master/BaseballHostAwayAuto.user.js
+// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/BaseballHostAwayAuto.js
+// @downloadURL	 https://raw.githubusercontent.com/michalani/PNW-Scripts/master/BaseballHostAwayAuto.js
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
 // @grant        none
 // ==/UserScript==
