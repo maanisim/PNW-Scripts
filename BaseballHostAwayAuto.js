@@ -40,7 +40,7 @@ document.body.append(CreateElement('div', divTag => {
 
 /* Fetch API key
 -------------------------*/
-/*
+
 function fetchAPIKey(){
     var req = new XMLHttpRequest();
     req.open('GET', '../../../../account//#7', false);
@@ -60,7 +60,7 @@ if(localStorage.getItem('Doc_APIKey') == null){
         localStorage.setItem('Doc_APIKey', tmpKeyValue);
     }
 }
-*/
+
 /* Global Variables
 -------------------------*/
 const teamID = parseInt([...document.querySelectorAll('#leftcolumn a')].filter(aTag => aTag.href.includes('/obl/team/id'))[0].href.split('=')[1])
