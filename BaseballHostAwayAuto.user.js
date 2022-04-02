@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW - Baseball Host/Away Auto [v4]
 // @namespace    https://github.com/michalani/PNW-Scripts
-// @version      0.8
+// @version      0.8.1
 // @description  Automate Baseball Hosting Games
 // @author       BlackAsLight
 // @author       Modified by https://github.com/michalani/
