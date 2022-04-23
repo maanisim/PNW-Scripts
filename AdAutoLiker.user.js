@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PNW - Ad Auto Liker
-// @namespace    http://tampermonkey.net/
+// @namespace    AdAutoLiker.user.js
 // @version      0.2
 // @description  Automatically likes ad from the X user.
 // @author       You

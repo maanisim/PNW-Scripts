@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name        PNW - Enchanced Alliance Deposit Functionality
+// @namespace   BaseballHostAwayAuto.user.js
 // @version     1.1
 // @description Expands the functionality of depositing by filling the cash deposit for you, or alternatively all resources for safekeeping.
 // @author      https://github.com/michalani/

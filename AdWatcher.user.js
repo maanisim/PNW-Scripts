@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Doc: Reward-Ads
-// @namespace    https://politicsandwar.com/nation/id=19818
+// @namespace    AdWatcher.user.js
 // @version      1.0
 // @description  Autoplay Reward Ads
 // @author       BlackAsLight

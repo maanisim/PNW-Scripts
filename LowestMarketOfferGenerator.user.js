@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PNW - Lowest Market Offer Generator
-// @namespace    http://tampermonkey.net/
+// @namespace    LowestMarketOfferGenerator.user.js
 // @version      1
 // @description  Creates a SELL button which allows you to set the price of the resource to sell to (-1) of the current lowest market offer.
 // @author       https://github.com/michalani/

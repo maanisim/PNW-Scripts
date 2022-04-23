@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PNW - Auto Comender
-// @namespace    http://tampermonkey.net/
+// @namespace    AutoComender.user.js
 // @version      1
 // @description  Automatically commends people starting from "https://politicsandwar.com/index.php?id=15&keyword=&cat=everything&ob=date&od=ASC&gopage=%3E%3E&maximum=50&minimum=*" until there is no more nations
 // @author       https://github.com/michalani/

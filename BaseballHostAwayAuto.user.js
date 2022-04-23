@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PNW - Baseball Host/Away Auto [1.4.0]
-// @namespace    https://github.com/BlackAsLight/DocScripts/blob/main/Baseball/Play%20Baseball.user.js
+// @namespace    BaseballHostAwayAuto.user.js
 // @version      1.4.0
 // @description  Automate Baseball Hosting Games
 // @author       BlackAsLight
