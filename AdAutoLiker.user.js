@@ -3,7 +3,7 @@
 // @namespace    AdAutoLiker.user.js
 // @version      0.3
 // @description  Automatically likes ad from the X user.
-// @author       You
+// @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/*
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
 // @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/AdAutoLiker.user.js
