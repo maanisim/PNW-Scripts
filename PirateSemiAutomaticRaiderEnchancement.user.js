@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW - Pirate Semi-Automatic Raider Enchancement
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  Speeds up raiding other players by automating certain actions, such as setting ground battles to raid mode and disabling the use of munitions if enemy has no troops.
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/nation/war/groundbattle/war=*
