@@ -7,8 +7,8 @@
 // @match        https://politicsandwar.com/nation/war/groundbattle/war=*
 // @match        https://politicsandwar.com/nation/war/declare/id=*
 // @match        https://politicsandwar.com/nation/war
-// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.js
-// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.js
+// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.user.js
+// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.user.js
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
 // @grant        none
 // ==/UserScript==
