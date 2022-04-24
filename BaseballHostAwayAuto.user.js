@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         PNW - Baseball Host/Away Auto [1.4.0]
-// @namespace    BaseballHostAwayAuto.user.js
-// @version      1.4.0
+// @name         PNW - Baseball Host/Away Auto [1.4.1]
+// @namespace    https://github.com/BlackAsLight/DocScripts/blob/main/Baseball/Play%20Baseball.user.js
+// @version      1.4.1
 // @description  Automate Baseball Hosting Games
 // @author       BlackAsLight
 // @author       Modified by https://github.com/michalani/
@@ -121,6 +121,20 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 			}
 			else {
 				localStorage.removeItem('Doc_SB_Human');
+			}
+		};
+	}));
+	divTag.append(document.createElement('br'));
+	divTag.append('Enable AutoClick: ');
+	divTag.append(CreateElement('input', inputTag => {
+		inputTag.type = 'checkbox';
+		inputTag.checked = localStorage.getItem('PNW_AutoClick');
+		inputTag.onchange = () => {
+			if (inputTag.checked) {
+				localStorage.setItem('PNW_AutoClick', true);
+			}
+			else {
+				localStorage.removeItem('PNW_AutoClick');
 			}
 		};
 	}));
@@ -245,7 +259,11 @@ async function CheckStats() {
     //Uncaught (in promise) TypeError: NetworkError when attempting to fetch resource.
     //fucks up here
 	UpdateTable();
-    document.querySelector('button#Play.btn').click();
+    if(localStorage.getItem('PNW_AutoClick') != null){
+        //experimental Sleep - potential fix to sometimes the button unclicking.
+        await Sleep(100);
+        document.querySelector('button#Play.btn').click();
+    }
 }
 
 async function GetGames() {
@@ -417,6 +435,7 @@ async function AwayGame() {
 	document.querySelector('#Checks').textContent = 0;
 	document.querySelector('#Play').disabled = false;
 	document.querySelector('#Cancel').disabled = true;
+    //document.querySelector('button#Play.btn').click();
 }
 
 async function GetDoc(options) {
