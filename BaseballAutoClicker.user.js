@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Baseball Auto Clicker
 // @namespace    BaseballAutoClicker.user.js
-// @version      1.1
+// @version      1.1.1
 // @description  Automatically plays baseball / works with BlackAsLight script only.
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/human/
@@ -80,7 +80,7 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 	divTag.append(document.createElement('br'));
 	divTag.append(CreateElement('button', buttonTag => {
 		const CaptchaWebhook = localStorage.getItem('PNW_CaptchaWebhook');
-		buttonTag.append(CaptchaWebhook ? 'Update webhook' : 'Insert webhook');
+		buttonTag.append(CaptchaWebhook ? 'Update webhook' : 'Insert webhook (opt)');
 		buttonTag.onclick = () => {
 			const response = prompt('Insert webhook which can be found in discord settings:', CaptchaWebhook || '');
 			if (response === null) {
@@ -98,7 +98,7 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 	divTag.append(document.createElement('br'));
 	divTag.append(CreateElement('button', buttonTag => {
 		const CaptchaWebhookMsg = localStorage.getItem('PNW_CaptchaWebhookMsg');
-		buttonTag.append(CaptchaWebhookMsg ? 'Update webhook msg' : 'Insert webhook msg');
+		buttonTag.append(CaptchaWebhookMsg ? 'Update webhook msg (opt)' : 'Insert webhook msg (opt)');
 		buttonTag.onclick = () => {
 			const response = prompt('Insert webhook msg which will be sent:', CaptchaWebhookMsg || '');
 			if (response === null) {
@@ -127,7 +127,9 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 			}
 		};
 	}));
-	divTag.append(document.createElement('br'));
+    divTag.append(document.createElement('hr'));
+	divTag.append(CreateElement('b', bTag => bTag.append('Baseball Auto')));
+    divTag.append(document.createElement('br'));
 	divTag.append('Enable AutoClick: ');
 	divTag.append(CreateElement('input', inputTag => {
 		inputTag.type = 'checkbox';
