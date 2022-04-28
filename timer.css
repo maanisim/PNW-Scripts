@@ -50,3 +50,11 @@
     justify-content: center;
     font-size: 48px;
 }
+
+#app{
+    position: relative;
+    background-color:red;
+    height:20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
