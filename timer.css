@@ -53,11 +53,7 @@
 
 #app{
     position: relative;
-    height:20px;
+    height: 1px;
     top: 50%;
     transform: translateY(-50%);
-}
-#app{
-    height: 30px;
-    width: 30px;
 }
