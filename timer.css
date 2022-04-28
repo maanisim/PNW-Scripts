@@ -53,8 +53,12 @@
 
 #app{
     position: relative;
-    background-color:red;
+    /*background-color:red;*/
     height:20px;
     top: 50%;
     transform: translateY(-50%);
+}
+#app{
+    height: 30px;
+    width: 30px;
 }
