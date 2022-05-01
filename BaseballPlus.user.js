@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW Baseball+
 // @namespace    BaseballPlus.user.js
-// @version      1.2
+// @version      1.3
 // @description  Automatically plays baseball  [works with BlackAsLight script only]
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/human/
@@ -28,6 +28,7 @@ document.body.append(CreateElement('div', divTag => {
 -------------------------*/
 var firstPageLoad = true;
 var tmpPlayed = null;
+var tmpPlayedIntArr = [null,null];
 
 /* Functions
 -------------------------*/
@@ -144,6 +145,20 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 		};
 	}));
 	divTag.append(document.createElement('br'));
+	divTag.append('Click on page load: ');
+	divTag.append(CreateElement('input', inputTag => {
+		inputTag.type = 'checkbox';
+		inputTag.checked = localStorage.getItem('PNW_PageLoadClick');
+		inputTag.onchange = () => {
+			if (inputTag.checked) {
+				localStorage.setItem('PNW_PageLoadClick', true);
+			}
+			else {
+				localStorage.removeItem('PNW_PageLoadClick');
+			}
+		};
+	}));
+	divTag.append(document.createElement('br'));
 	divTag.append('250+ load Away games: ');
 	divTag.append(CreateElement('input', inputTag => {
 		inputTag.type = 'checkbox';
@@ -178,6 +193,9 @@ function sendWebhookMsg(user,userMsg,webhookURL) {
 	let playBtnTxtClassPath = 'button#Play.btn';
 
 	waitForElm(playBtnTxtClassPath).then((elm) => {
+        if(localStorage.getItem('PNW_PageLoadClick') != null){
+            document.querySelector(playBtnTxtClassPath).click();
+        }
 		loadClickyClacky();
 	});
 
@@ -191,7 +209,7 @@ function sendWebhookMsg(user,userMsg,webhookURL) {
 				// Check the modified attributeName is "disabled"
 				if(mutation.attributeName === "disabled" && localStorage.getItem('PNW_AutoClick') != null) {
                     tmpPlayed = document.querySelector('#Played').textContent.split("/");
-					if(location.href == "https://politicsandwar.com/obl/host/" &&  localStorage.getItem('PNW_PlayAway') != null && tmpPlayed[0] >= tmpPlayed[1]){
+					if(location.href == "https://politicsandwar.com/obl/host/" && localStorage.getItem('PNW_PlayAway') != null && tmpPlayed[0] != "?" && tmpPlayed[0] != "NaN" && tmpPlayed[0] >= tmpPlayed[1]){
                         location.href = "https://politicsandwar.com/obl/play/";
 					} else {
                         playBtn.click();
