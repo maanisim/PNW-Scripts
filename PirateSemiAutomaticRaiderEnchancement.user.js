@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW - Pirate Semi-Automatic Raider Enchancement
 // @namespace    PirateSemiAutomaticRaiderEnchancement.js
-// @version      1.6.1
+// @version      1.7
 // @description  Speeds up raiding other players by automating certain actions, such as setting ground battles to raid mode and disabling the use of munitions if enemy has no troops.
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/nation/war/groundbattle/war=*
@@ -121,10 +121,7 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 			else {
 				localStorage.removeItem('PNW_NoMunitions');
 			}
-			document.querySelector('#notify').style.setProperty('display', inputTag.checked ? 'none' : 'block');
 		};
-		WaitForTag('#notify')
-			.then(tag => tag.style.setProperty('display', localStorage.getItem('PNW_NoMunitions') ? 'none' : 'block'));
 	}));
 
 	divTag.append(document.createElement('br'));
@@ -183,7 +180,7 @@ if(window.location.href.startsWith("https://politicsandwar.com/nation/war/ground
                 totalArmy = document.querySelectorAll('body div.container div.row div#rightcolumn.col-md-10 form div.row div.col-xs-12.col-md-6 div.row div.col-xs-6 p.center.smallText');
                 
                 //smartmunitions
-                if(localStorage.getItem('PNW_NoMunitions') == true || localStorage.getItem('PNW_NoMunitions') == null ){
+                if(localStorage.getItem('PNW_NoMunitions') != null ){
                     for (let i = 0; i < nationsInvolded.length; i++) {
                         if(localStorage.getItem('PNW_NationID') != null && (nationsInvolded[i].href.split('id=')[1] != localStorage.getItem('PNW_NationID'))){
                             if(i == 1){
