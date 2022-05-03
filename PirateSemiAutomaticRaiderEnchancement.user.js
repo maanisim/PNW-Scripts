@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         PNW - Pirate Semi-Automatic Raider Enchancement
 // @namespace    PirateSemiAutomaticRaiderEnchancement.js
-// @version      1.6
+// @version      1.6.1
 // @description  Speeds up raiding other players by automating certain actions, such as setting ground battles to raid mode and disabling the use of munitions if enemy has no troops.
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/nation/war/groundbattle/war=*
 // @match        https://politicsandwar.com/nation/war/declare/id=*
 // @match        https://politicsandwar.com/nation/war
+// @match        https://politicsandwar.com/nation/war/
+// @match        https://politicsandwar.com/nation/war/#
 // @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.user.js
 // @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/PirateSemiAutomaticRaiderEnchancement.user.js
 // @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
