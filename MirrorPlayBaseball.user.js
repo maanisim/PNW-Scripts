@@ -9,7 +9,7 @@
 // @match        https://politicsandwar.com/obl/play/*
 // @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/MirrorPlayBaseball.user.js
 // @downloadURL	 https://raw.githubusercontent.com/michalani/PNW-Scripts/master/MirrorPlayBaseball.user.js
-// @icon         https://www.google.com/s2/favicons?domain=politicsandwar.com
+// @icon         https://avatars.githubusercontent.com/u/44320105
 // @grant        none
 // ==/UserScript==
 
