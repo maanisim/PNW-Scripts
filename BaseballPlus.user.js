@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW Baseball+
 // @namespace    BaseballPlus.user.js
-// @version      1.3
+// @version      1.4
 // @description  Automatically plays baseball  [works with BlackAsLight script only]
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/human/
@@ -71,6 +71,43 @@ function waitForElm(selector) {
         });
     });
 }
+
+async function showMyTeamRating(){
+    //fetch current team score
+    const data1 = JSON.parse(await (await fetch(`https://api.politicsandwar.com/graphql?api_key=${localStorage.getItem('Doc_APIKey')}&query={baseball_teams(id:[${(document.querySelectorAll(' body div.container div.row div#leftcolumn.col-md-2 ul.sidebar a')[20].href.split('id=')[1])}]){data{rating}}}`)).text()).data;
+    //data1.baseball_teams.data[0].rating
+
+    //append the data under the buttons
+    var btnBox = document.getElementById( 'Game' );
+    var newText = document.createElement( 'h2' ); // create new textarea
+    newText.innerText = "Your team rating is: "+data1.baseball_teams.data[0].rating+"%"
+    btnBox.parentNode.insertBefore( newText, btnBox.nextSibling );
+    newText.id = 'PNW_Rating';
+
+    //color the rating
+    //red
+    if(data1.baseball_teams.data[0].rating < 15){
+        newText.style.color = 'red';
+
+        //orange
+    } else if(data1.baseball_teams.data[0].rating < 100){
+        newText.style.color = 'orange';
+        //green
+    } else if(data1.baseball_teams.data[0].rating == 100){
+        newText.style.color = 'green';
+    }
+
+    //center the element
+    document.head.append(CreateElement('style', styleTag => {
+        // Game Buttons
+        styleTag.append('#PNW_Rating { font-size: 1.15em; text-align: center; width: 100%; }');
+        styleTag.append('@media only screen and (max-width: 502px) { #PNW_Rating { font-size: 1em; } }');
+        styleTag.append('@media only screen and (max-width: 407px) { #PNW_Rating { font-size: 12px; } } ');
+        styleTag.append('#PNW_Rating > p { border-color: black; border-style: solid; border-width: 0 2px; display: inline; margin: 0 0.25em; padding: 0; }');
+    }));
+
+}
+
 
 /* User Configuration Settings
 -------------------------*/
@@ -172,6 +209,22 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 			}
 		};
 	}));
+	divTag.append(document.createElement('br'));
+	divTag.append('Show my team rating: ');
+	divTag.append(CreateElement('input', inputTag => {
+		inputTag.type = 'checkbox';
+		inputTag.checked = localStorage.getItem('PNW_ShowMyTeamRating');
+		inputTag.onchange = () => {
+			if (inputTag.checked) {
+				localStorage.setItem('PNW_ShowMyTeamRating', true);
+                showMyTeamRating();
+			}
+			else {
+				localStorage.removeItem('PNW_ShowMyTeamRating');
+                location.reload();
+			}
+		};
+	}));
 }));
 
 function sendWebhookMsg(user,userMsg,webhookURL) {
@@ -196,6 +249,11 @@ function sendWebhookMsg(user,userMsg,webhookURL) {
         if(localStorage.getItem('PNW_PageLoadClick') != null){
             document.querySelector(playBtnTxtClassPath).click();
         }
+        if(localStorage.getItem('PNW_ShowMyTeamRating') != null){
+            showMyTeamRating();
+        }
+
+
 		loadClickyClacky();
 	});
 
