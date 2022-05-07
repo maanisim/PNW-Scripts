@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Doc: Sync the aSyncly
 // @namespace    https://politicsandwar.com/nation/id=19818
-// @version      1.1.1
+// @version      1.1.2
 // @description  Saves Settings to the Dossier Page
 // @author       You
 // @match        https://politicsandwar.com/*
 // @exclude      https://politicsandwar.com/human/
 // @icon         https://avatars.githubusercontent.com/u/44320105
+// @downloadURL  https://raw.githubusercontent.com/michalani/PNW-Scripts/master/aSyncly.user.js
+// @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/aSyncly.user.js
 // @grant        none
 // ==/UserScript==
 
