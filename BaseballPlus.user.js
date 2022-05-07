@@ -26,9 +26,7 @@ document.body.append(CreateElement('div', divTag => {
 
 /* settings
 -------------------------*/
-var firstPageLoad = true;
 var tmpPlayed = null;
-var tmpPlayedIntArr = [null,null];
 
 /* Functions
 -------------------------*/
