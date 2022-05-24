@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         PNW Baseball+
 // @namespace    BaseballPlus.user.js
-// @version      1.4
+// @version      1.5
 // @description  Automatically plays baseball  [works with BlackAsLight script only]
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/human/
 // @match        https://politicsandwar.com/obl/host/*
 // @match        https://politicsandwar.com/obl/play/*
+// @match        https://politicsandwar.com/obl/team/id=*
 // @updateURL    https://raw.githubusercontent.com/michalani/PNW-Scripts/master/BaseballPlus.user.js
 // @downloadURL	 https://raw.githubusercontent.com/michalani/PNW-Scripts/master/BaseballPlus.user.js
 // @icon         https://politicsandwar.com/img/baseball/defaultlogo.png
@@ -26,7 +27,9 @@ document.body.append(CreateElement('div', divTag => {
 
 /* settings
 -------------------------*/
+var firstPageLoad = true;
 var tmpPlayed = null;
+var tmpPlayedIntArr = [null,null];
 
 /* Functions
 -------------------------*/
@@ -104,6 +107,34 @@ async function showMyTeamRating(){
         styleTag.append('#PNW_Rating > p { border-color: black; border-style: solid; border-width: 0 2px; display: inline; margin: 0 0.25em; padding: 0; }');
     }));
 
+}
+
+function reloadPage(){
+    window.location=window.location;
+}
+
+function isServerUnderLoad(){
+    try{
+        if(document.querySelector('body div.container div.row div#rightcolumn.col-md-10 div.columnheader').textContent == "Server Under Heavy Load"){
+            return true;
+        } else{
+            return false;
+        }
+    } catch(err){
+        return false;
+    }
+}
+
+/*
+If on a war page with enemy nation, check if there are enough points in order to attack the enemy
+
+if there are check if the enemy has any army, if they don't dont waste your munitions on them.
+
+else attack them
+*/
+
+if(isServerUnderLoad() == true){
+    setTimeout(reloadPage, 5100);
 }
 
 
@@ -266,7 +297,11 @@ function sendWebhookMsg(user,userMsg,webhookURL) {
 				if(mutation.attributeName === "disabled" && localStorage.getItem('PNW_AutoClick') != null) {
                     tmpPlayed = document.querySelector('#Played').textContent.split("/");
 					if(location.href == "https://politicsandwar.com/obl/host/" && localStorage.getItem('PNW_PlayAway') != null && tmpPlayed[0] != "?" && tmpPlayed[0] != "NaN" && tmpPlayed[0] >= tmpPlayed[1]){
-                        location.href = "https://politicsandwar.com/obl/play/";
+                        //location.href = "https://politicsandwar.com/obl/play/";
+                        //console.log('activate away');
+                        //console.log(tmpPlayed[0]);
+                        //console.log(tmpPlayed[1]);
+                        playBtn.click();
 					} else {
                         playBtn.click();
                     }
@@ -299,4 +334,3 @@ function sendWebhookMsg(user,userMsg,webhookURL) {
 
 	}
   }
-
