@@ -15,3 +15,5 @@ To use please make sure to use Firefox and Tampermonkey
 6. Select on of the above available scripts, select `Raw`
 7. After pressing `Raw` please check if there are any new tabs, inside of the new tab you should find a `Install` button. If you are unable to find this button please change your view to `Desktop Mode` while trying to install this script.
 4. Navigate to the PNW page and you should see script in action, settings are usually available underneath the PNW navigation menu.
+
+The script provided have limited support as of 06/07/2022.
