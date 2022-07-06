@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PNW Baseball+
 // @namespace    BaseballPlus.user.js
-// @version      1.6
+// @version      1.7
 // @description  Automatically plays baseball  [works with BlackAsLight script only]
 // @author       https://github.com/michalani/
 // @match        https://politicsandwar.com/human/
@@ -239,20 +239,6 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 		};
 	}));
 	divTag.append(document.createElement('br'));
-	divTag.append('(exp) On 250+ load Away: ');
-	divTag.append(CreateElement('input', inputTag => {
-		inputTag.type = 'checkbox';
-		inputTag.checked = localStorage.getItem('PNW_PlayAway');
-		inputTag.onchange = () => {
-			if (inputTag.checked) {
-				localStorage.setItem('PNW_PlayAway', true);
-			}
-			else {
-				localStorage.removeItem('PNW_PlayAway');
-			}
-		};
-	}));
-	divTag.append(document.createElement('br'));
 	divTag.append('Show my team rating: ');
 	divTag.append(CreateElement('input', inputTag => {
 		inputTag.type = 'checkbox';
@@ -264,22 +250,6 @@ document.querySelector('#leftcolumn').append(CreateElement('div', divTag => {
 			}
 			else {
 				localStorage.removeItem('PNW_ShowMyTeamRating');
-                location.reload();
-			}
-		};
-	}));
-	divTag.append(document.createElement('br'));
-	divTag.append('(exp) Click Random Delay: ');
-	divTag.append(CreateElement('input', inputTag => {
-		inputTag.type = 'checkbox';
-		inputTag.checked = localStorage.getItem('PNW_RandomDelay');
-		inputTag.onchange = () => {
-			if (inputTag.checked) {
-				localStorage.setItem('PNW_RandomDelay', true);
-                showMyTeamRating();
-			}
-			else {
-				localStorage.removeItem('PNW_RandomDelay');
                 location.reload();
 			}
 		};
